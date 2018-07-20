@@ -3,10 +3,10 @@ import { Text, TouchableOpacity } from 'react-native';
 
 //check react-native docs for Touchable (button) event
 //children = the component within the parent (ie text in AlbumDetail component)
-const Button = ({ handlePress, children }) => {
+const Button = ({ handlePress, children, style }) => {
   const { buttonStyle, textStyle } = styles;
   return (
-    <TouchableOpacity style={buttonStyle} onPress={handlePress}>
+    <TouchableOpacity style={[buttonStyle, style]} onPress={handlePress}>
       <Text style={textStyle}>
         {children}
       </Text>
@@ -16,7 +16,6 @@ const Button = ({ handlePress, children }) => {
 
 const styles = {
   buttonStyle: {
-    flex: 1,
     alignSelf: 'stretch',
     backgroundColor: '#fff',
     borderRadius: 5,

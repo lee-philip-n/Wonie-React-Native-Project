@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
-import Default from './Default';
+import SearchReducer from './SearchReducer';
+import MovieListReducer from './MovieListReducer';
+import AuthReducer from './AuthReducer';
 
 export default combineReducers({
-  default: Default,
+  searchField: SearchReducer,
+  movieListField: MovieListReducer,
+  auth: AuthReducer,
 });
 
