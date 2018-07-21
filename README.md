@@ -18,6 +18,13 @@ Tech Stack:
   redux,
   redux-thunk
 
+React Native Installation:
+1) download/install/update XCodes.
+2) install or update ("brew update") Homebrew.
+3) install node ("brew install node") [need at least node v4.5 for react-native].
+4) install watchman ("brew install watchman").
+5) install react-native cli ("npm install -g react-native-cli").
+
 Cloning directions:
 1) clone the repo.
 2) run "npm install".
