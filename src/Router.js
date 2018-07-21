@@ -5,6 +5,7 @@ import Homepage from './components/Homepage';
 import MovieListInfo from './components/MovieListInfo';
 import LoginForm from './components/LoginForm';
 import CreateAccountForm from './components/CreateAccountForm';
+import FavoritesForm from './components/FavoritesForm';
 
 const logout = () => {
   firebase.auth().signOut()
@@ -31,7 +32,7 @@ const RouterComponent = () => {
         />
         <Scene 
           rightTitle='Favorites'
-          onRight={ () => console.log('Favorites') }
+          onRight={ () => Actions.favorites() }
           key='homepage_logout' 
           component={Homepage} 
           title='muviDB'
@@ -54,7 +55,20 @@ const RouterComponent = () => {
           back
           onBack={ () => Actions.login({ type: 'reset' }) }
         />
-        <Scene key='movieListInfo' component={MovieListInfo} title='Movie Info' />
+        <Scene 
+          key='favorites' 
+          component={FavoritesForm} 
+          title='Favorites' 
+          backTitle='Back'
+          onBack={ () => Actions.pop() }
+        />
+        <Scene 
+          key='movieListInfo' 
+          component={MovieListInfo} 
+          title='Movie Info' 
+          backTitle='Back'
+          onBack={ () => Actions.pop() }
+        />
       </Scene>
     </Router>
   );

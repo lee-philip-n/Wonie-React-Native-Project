@@ -3,7 +3,6 @@ import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import ListItem from './ListItem';
 
-
 const mapStateToProps = (state) => {
   const { searchedMovies } = state.searchField;
 

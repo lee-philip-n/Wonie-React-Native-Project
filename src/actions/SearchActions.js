@@ -25,6 +25,7 @@ export const searchMovie = (movie) => {
         
         for (let i = 0; i < results.length; i++) {
           if (results[i].poster_path) {
+            results[i].favorited = false;
             filteredResults.push(results[i]);
           };
         };

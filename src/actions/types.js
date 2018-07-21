@@ -4,7 +4,7 @@ export const SEARCH_MOVIE_SUCCESS = 'search_movie_success';
 export const LOADING = 'loading';
 export const SEARCH_ERROR = 'search_error';
 
-export const EXPAND_DESC = 'expand_desc';
+export const FETCH_FAV = 'fetch_fav';
 
 export const EMAIL_CHANGED = 'email_changed';
 export const PASSWORD_CHANGED = 'password_changed';

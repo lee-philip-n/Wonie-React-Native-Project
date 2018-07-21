@@ -2,14 +2,51 @@ import React, { Component } from 'react';
 import { Text, ScrollView, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { Card, CardSection } from './common';
+import { Button, Card, CardSection } from './common';
 import * as actions from '../actions';
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    movie: ownProps.movie,
+  };
+};
 
 class MovieListInfo extends Component {
   constructor(props) {
     super(props);
+    this.onFavButtonPress = this.onFavButtonPress.bind(this);
+    this.onUnFavButtonPress = this.onUnFavButtonPress.bind(this);
   }
 
+  onFavButtonPress() {
+    const { movie } = this.props
+    console.log('movie', movie)
+    this.props.addToFav(this.props.movie)
+  }
+
+  onUnFavButtonPress() {
+    const { uid } = this.props.movie
+
+    this.props.removeFav(uid)
+  }
+
+  renderFavButton() {
+    const { movie } = this.props;
+
+    if (movie.favorited) {
+      return (
+        <Button style={{flex: 1}} handlePress={this.onUnFavButtonPress}>
+          Remove Favorite
+        </Button>   
+      )
+    }
+
+    return (
+      <Button style={{flex: 1}} handlePress={this.onFavButtonPress}>
+        Favorite
+      </Button> 
+    )    
+  }
   render() {
     const { imageStyle, titleStyle, textStyle, containerStyle } = styles;
     return (
@@ -37,6 +74,9 @@ class MovieListInfo extends Component {
             </Text>
           </CardSection>
 
+          <CardSection>
+            {this.renderFavButton()}
+          </CardSection>
         </Card>
       </ScrollView>
     )

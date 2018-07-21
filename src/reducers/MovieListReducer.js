@@ -1,10 +1,13 @@
-import { EXPAND_DESC } from '../actions/types';
+import { FETCH_FAV } from '../actions/types';
 
-export default (state = null, actions) => {
+
+const INITIAL_STATE = {};
+
+export default (state = INITIAL_STATE, actions) => {
   switch (actions.type) {
-    case EXPAND_DESC:
+    case FETCH_FAV:
       return actions.payload;
     default:
       return state;
-  }
-}
+  };
+};
