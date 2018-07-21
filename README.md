@@ -28,8 +28,8 @@ React Native Installation:
 Cloning directions:
 1) clone the repo.
 2) run "npm install".
-3) setup your own firebase project.
-4) request your own api key from 'The Movie Database' (https://www.themoviedb.org/).
-5) replace the information in the config.example.js file with the configs from firebase and tmDB.
+3) setup your own firebase project (https://firebase.google.com/). NOTE: setup authentication with email/password and create the database.
+4) request your own api key from 'The Movie Database' (https://www.themoviedb.org/). 
+5) replace the information in the config.example.js file with the configs from firebase and tmDB. NOTE: for firebase, be sure to use the config from the 'Add Firebase to your web app' option. 
 6) rename config.example.js to just config.js.
 7) run simulator from the directory (for ios: "react-native run-ios").
