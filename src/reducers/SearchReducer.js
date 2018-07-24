@@ -17,7 +17,7 @@ export default (state = INITIAL_STATE, actions) => {
       return { ...state, ...INITIAL_STATE, searchedMovies: actions.payload };
     case SEARCH_ERROR:
       return { ...state, ...INITIAL_STATE, error: actions.payload };
-    default: 
+    default:
       return state;
   }
-}
+};

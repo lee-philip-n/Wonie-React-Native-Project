@@ -1,5 +1,4 @@
 export const UPDATE_MOVIE_SEARCH = 'update_movie_search';
-export const SEARCH_MOVIE = 'search_movie';
 export const SEARCH_MOVIE_SUCCESS = 'search_movie_success';
 export const LOADING = 'loading';
 export const SEARCH_ERROR = 'search_error';

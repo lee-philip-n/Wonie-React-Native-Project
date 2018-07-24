@@ -25,11 +25,11 @@ export const verifyPasswordChanged = (password) => {
 
 const loginUserSuccess = (dispatch, user) => {
   dispatch({ type: LOGIN_USER_SUCCESS, payload: user });
-  Actions.homepage_logout({type: 'reset'});
+  Actions.homepage_logout({ type: 'reset' });
 };
 
 const loginUserFail = (dispatch, error) => {
-  dispatch({ type: LOGIN_USER_FAIL, payload: error })
+  dispatch({ type: LOGIN_USER_FAIL, payload: error });
 };
 
 export const loginUser = ({ email, password }) => {
@@ -47,9 +47,9 @@ export const loginUser = ({ email, password }) => {
 
 export const createUser = ({ email, password, verifyPassword }) => {
   return (dispatch) => {
-    dispatch({ type: LOGIN_USER})
+    dispatch({ type: LOGIN_USER });
     if (password !== verifyPassword) {
-      loginUserFail(dispatch, { message: 'Password did not match.' })
+      loginUserFail(dispatch, { message: 'Password did not match.' });
     } else {
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((user) => {
@@ -57,7 +57,7 @@ export const createUser = ({ email, password, verifyPassword }) => {
         })
         .catch((error) => {
           loginUserFail(dispatch, error);
-        })
+        });
     }
   };
 };
@@ -65,5 +65,5 @@ export const createUser = ({ email, password, verifyPassword }) => {
 export const reset = () => {
   return {
     type: RESET,
-  }
-}
+  };
+};

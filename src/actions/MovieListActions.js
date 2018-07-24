@@ -7,12 +7,12 @@ export const addToFav = (movie) => {
   const { currentUser } = firebase.auth();
 
   movie.favorited = true;
-  return (dispatch) => {
+  return () => {
     firebase.database().ref(`/users/${currentUser.uid}/fav`)
       .push(movie)
       .then(() => {
         Actions.pop();
-      })
+      });
   };
 };
 
@@ -21,11 +21,11 @@ export const fetchFav = () => {
 
   return (dispatch) => {
     firebase.database().ref(`/users/${currentUser.uid}/fav`)
-      .on('value', snapshot => {
-        dispatch({ type: FETCH_FAV, payload: snapshot.val() })
+      .on('value', (snapshot) => {
+        dispatch({ type: FETCH_FAV, payload: snapshot.val() });
       });
   };
-}
+};
 
 export const removeFav = (uid) => {
   const { currentUser } = firebase.auth();

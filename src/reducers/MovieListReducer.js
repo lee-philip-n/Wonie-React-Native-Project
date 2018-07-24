@@ -9,5 +9,5 @@ export default (state = INITIAL_STATE, actions) => {
       return actions.payload;
     default:
       return state;
-  };
+  }
 };
