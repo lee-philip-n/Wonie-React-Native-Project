@@ -21,6 +21,10 @@ class SearchField extends Component {
     this.onSearchButtonPress = this.onSearchButtonPress.bind(this);
   }
 
+  componentDidMount() {
+    this.props.homepageMovie();
+  }
+
   onSearchButtonPress() {
     const { movie } = this.props;
 

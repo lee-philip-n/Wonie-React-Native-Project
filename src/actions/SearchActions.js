@@ -15,6 +15,18 @@ const loading = (dispatch) => {
   dispatch({ type: LOADING });
 };
 
+export const homepageMovie = () => {
+  let todayDate = new Date();
+  let today = todayDate.getFullYear() + '-' + (todayDate.getMonth() + 1) + '-' + todayDate.getDate();
+  let oneMonthAgo = (todayDate.getMonth() === 0 ? todayDate.getFullYear() - 1 : todayDate.getFullYear()) + '-' + (todayDate.getMonth() === 0 ? todayDate.getMonth() + 12 : todayDate.getMonth()) + '-' + todayDate.getDate();
+  return (dispatch) => {
+    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbAPIKey.apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&primary_release_date.gte=${oneMonthAgo}&primary_release_date.lte=${today}`)
+      .then(response => {
+        dispatch({ type: SEARCH_MOVIE_SUCCESS, payload: response.data.results });
+     });
+  }
+};
+
 export const searchMovie = (movie) => {
   return (dispatch) => {
     loading(dispatch);
