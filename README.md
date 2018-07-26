@@ -1,6 +1,6 @@
-# muviDB
+# Wonie
 
-muviDB is a simple project utilizing React Native and Redux to retrieve/display movie information in an ios/android application.
+Wonie is a simple project utilizing React Native and Redux to retrieve/display movie information in an ios/android application.
 
 Features:
 1) Users can input a movie title to retrieve a list of movies along with each retrieved movie's information (poster pic, synopsis, etc).
