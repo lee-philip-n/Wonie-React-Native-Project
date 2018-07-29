@@ -27,7 +27,7 @@ const RouterComponent = () => {
           onRight={ () => Actions.login() }
           key='homepage_login' 
           component={Homepage} 
-          title='muviDB' 
+          title='Wonie' 
           initial 
         />
         <Scene 
@@ -35,7 +35,7 @@ const RouterComponent = () => {
           onRight={ () => Actions.favorites() }
           key='homepage_logout' 
           component={Homepage} 
-          title='muviDB'
+          title='Wonie'
           backTitle='Logout'
           onBack={ () => logout()  }
         />
